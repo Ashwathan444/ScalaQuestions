@@ -1,13 +1,19 @@
-object CommonItems extends App{
+object CommonItems {
 
-  val basketOne = List("Cake","Milk","Cheese","ToiletPaper")
-  val basketTwo = List("Bread","Water","Juice","Milk","Cheese")
+  def main(args: Array[String]): Unit ={
 
-  val result = for (item <- basketOne if basketTwo.contains(item)) yield item
+    val one = List("Cake","Milk","Cheese","ToiletPaper")
+    val two = List("Bread","Water","Juice","Milk","Cheese")
 
-  print("Shopping basket one = " )
-  println(basketOne.foreach(a => print(a + " - ")))
-  print("Shopping basket one = " )
-  println(basketTwo.foreach(a => print(a + " - ")))
-  print("Common items are : \n" +result)
+    val result = for (item <- one if two.contains(item)) yield item
+
+    display(one)
+    display(two)
+    print("Common items are : \n" +result)
+  }
+
+  def display(basket : List[String]): Unit ={
+    print("Shopping basket values = ")
+    println(basket.foreach(a => print(a + " - ")))
+  }
 }

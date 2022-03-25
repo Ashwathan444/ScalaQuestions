@@ -1,30 +1,24 @@
 import scala.io.StdIn._
 import java.time.LocalDate
 
-object JsonOutput  extends App{
+object JsonOutput{
 
-  println("Enter name : ")
-  val name = readLine()
-  println("Enter dob year : ")
-  val dobInYear = readInt()
-  println("Enter marks : ")
-  val marks = readInt()
-  println("Enter total marks : ")
-  val totalMarks = readInt()
+  def main(args: Array[String]): Unit ={
 
-  def calculate(name:String,dob:Int,marks:Int,tmarks:Int): Unit ={
+    println("Enter name : ")
+    val name = readLine()
+    println("Enter day : ")
+    val day = readInt()
+    println("Enter month : ")
+    val month = readInt()
+    println("Enter year : ")
+    val year = readInt()
+    println("Enter marks : ")
+    val marks = readInt()
+    val totalMarks = List(80,50,45,75,66,20,85,90)
 
-    val age = LocalDate.now.getYear - dob
-    val percentile = (marks/tmarks)*10
-    print(
-      s"""{
-         |"name": "$name"
-         |"age": $age
-         |"percentile" : $percentile
-         |}""".stripMargin)
+    val student1 = new Student(name,day,month,year,marks,totalMarks)
+    student1.display
   }
-
-  calculate(name,dobInYear,marks,totalMarks)
-
 
 }

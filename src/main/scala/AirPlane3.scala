@@ -22,11 +22,9 @@ class Plane3(company: String, modelNo: Int, capacity: Int) extends Vehicle3
   }
 }
 
-object AirPlane3
-{
+object AirPlane3 {
 
-  def main(args: Array[String])
-  {
+  def main(args: Array[String]) {
 
     val plane3 = new Plane2("Indigo",300,750 )
     println(plane3.printDetalis())
